@@ -32,7 +32,9 @@ public static int[] twoSumMap(int[] numbers, int target) {
 }
 ```
 
-We can use map to achieve this (as above) or another method, in which we order the array first, and then we increment the minimum or decrement the maximum, then add these two numbers together and compare the result with the target.
+We can use map to achieve this (as above) or another method, in which we order the array first, and then we find the indices of the minimum (0) and the maximum (n-1), and then add these two numbers together and compare the result with the target. If the result is larget than the target, we decrement the maximum index, otherwise we increment the minimum index.
+
+Other tricks:
 
 1. Creating a temporary array almost does not cost time: 
 ```
