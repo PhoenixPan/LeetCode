@@ -1,4 +1,4 @@
-###First version
+#####First version
 
 ```
 public static int[] twoSum(int[] nums, int target) {
@@ -15,6 +15,8 @@ public static int[] twoSum(int[] nums, int target) {
 ```
 
 It is slow and beats only 14%, because two loops are too expensive. Let's improve it. 
+
+#####Second version
 
 ```
 public static int[] twoSumMap(int[] numbers, int target) {
