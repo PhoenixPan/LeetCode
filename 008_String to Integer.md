@@ -1,5 +1,7 @@
 #####First version
 
+A primitive solution that manipulates Strings. Spent 7 ms and beats 9.5%.
+
 ```
 	public static int myAtoi(String str) {
 		str = str.trim();
@@ -48,8 +50,6 @@
 			return Integer.parseInt(sign + value);
 	}
 ```
-
-A primitive solution that manipulates Strings. Spent 7 ms and beats 9.5%.
 
 #####Second version
 
