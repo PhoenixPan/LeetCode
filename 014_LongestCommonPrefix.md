@@ -11,7 +11,6 @@ public class Solution {
             return strs[0];
         }
         else {
-            //String previous = strs[0];
             String answer = strs[0];
             for (int i = 1; i < length; i++) {
                 if (answer.equals(""))
