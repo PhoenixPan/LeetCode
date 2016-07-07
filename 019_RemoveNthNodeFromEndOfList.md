@@ -18,3 +18,9 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
         return dummy.next;
     }
 ```
+If we retain both 
+```
+dummy.next = head;
+slow.next = head;
+```
+[1] 1 will return [1] instead of [], so we need to discard one of them
