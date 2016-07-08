@@ -33,5 +33,7 @@ slow.next = slow.next.next;
 will change both dummy and slow (to [2,3,4,5,6]) whereas 
 ```
 slow = slow.next;
+//or
+slow = slow.next.next;
 ```
 will only change slow, not dummy
