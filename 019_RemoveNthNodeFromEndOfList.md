@@ -30,7 +30,7 @@ slow.next = head;
 ```
 slow.next = slow.next.next;
 ```
-will change both dummy and slow (to [2,3,4,5,6]) whereas 
+will change both dummy and slow (but not head) whereas 
 ```
 slow = slow.next;
 //or
