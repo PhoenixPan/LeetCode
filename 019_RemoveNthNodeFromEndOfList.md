@@ -39,8 +39,8 @@ Why dummy and slow are related?
 
 ---
 
-Why 
-[1,2,3,4,5,6]
+Why?  
+Given [1,2,3,4,5,6]
 ```
 slow.next = slow.next.next;
 ```
@@ -53,7 +53,7 @@ slow = slow.next.next;
 will only change slow, not dummy
 
 ---
-
+Why?  
 If we retain both 
 ```
 dummy.next = head;
