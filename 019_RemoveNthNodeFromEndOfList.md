@@ -2,20 +2,33 @@
 ##1
 ```
 public ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null || n == 0)
+            return head;
+        
         ListNode dummy = new ListNode(0);
-        dummy.next = head;
+        dummy.next = head;     // Avoid null pointer
+        ListNode fast = head;
         ListNode slow = dummy;
-        ListNode fast = dummy;
-        //slow.next = head;
-        for (int i = 0; i < n; i++) {
+        
+        while (n > 0) {
             fast = fast.next;
+            n--;
         }
+        
         while (fast.next != null) {
-            fast = fast.next;
             slow = slow.next;
+            fast = fast.next;
         }
+        // slow = [3,4,5]
+        // fast = []
+        // dummy = [0,1,2,3,4,5]
+        
         slow.next = slow.next.next;
-        return dummy.next;
+        
+        // slow = [3,5]
+        // dummy = [0,1,2,3,5]
+        
+        return dummy.next;    // dummy starts with 0
     }
 ```
 If we retain both 
