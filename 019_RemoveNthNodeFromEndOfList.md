@@ -31,11 +31,14 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
         return dummy.next;    // dummy starts with 0
     }
 ```
+
 ---
+
 Why dummy and slow are related?  
 
 
 ---
+
 Why 
 [1,2,3,4,5,6]
 ```
@@ -48,7 +51,9 @@ slow = slow.next;
 slow = slow.next.next;
 ```
 will only change slow, not dummy
+
 ---
+
 If we retain both 
 ```
 dummy.next = head;
