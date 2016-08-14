@@ -31,18 +31,12 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
         return dummy.next;    // dummy starts with 0
     }
 ```
-##Why dummy and slow are related?  
+---
+Why dummy and slow are related?  
 
 
-------------------------------------------------------------------------------
-If we retain both 
-```
-dummy.next = head;
-slow.next = head;
-```
-[1] 1 will return [1] instead of [], so we need to discard one of them
-
-##2
+---
+Why 
 [1,2,3,4,5,6]
 ```
 slow.next = slow.next.next;
@@ -54,3 +48,10 @@ slow = slow.next;
 slow = slow.next.next;
 ```
 will only change slow, not dummy
+---
+If we retain both 
+```
+dummy.next = head;
+slow.next = head;
+```
+[1] 1 will return [1] instead of [], so we need to discard one of them
