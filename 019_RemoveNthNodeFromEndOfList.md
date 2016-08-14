@@ -31,10 +31,10 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
         return dummy.next;    // dummy starts with 0
     }
 ```
-Why dummy and slow are related?  
+##Why dummy and slow are related?  
 
 
-
+------------------------------------------------------------------------------
 If we retain both 
 ```
 dummy.next = head;
