@@ -5,8 +5,8 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null || n == 0)
             return head;
         
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;     // Avoid null pointer
+        ListNode dummy = new ListNode(0); // Use an empty head to avoid dealing with the head, such as NPE
+        dummy.next = head;     
         ListNode fast = head;
         ListNode slow = dummy;
         
