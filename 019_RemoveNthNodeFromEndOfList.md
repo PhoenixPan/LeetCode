@@ -16,14 +16,16 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
         }
         
         while (fast.next != null) {
-            slow = slow.next;
+            slow = slow.next;  // Change slow will only change what slow points to
             fast = fast.next;
         }
         // slow = [3,4,5]
         // fast = []
         // dummy = [0,1,2,3,4,5]
         
-        slow.next = slow.next.next;
+        // Change slow.next changes its value in memory, which is also referred by dummy,
+        // therefore, dummy changed as well!
+        slow.next = slow.next.next; 
         
         // slow = [3,5]
         // dummy = [0,1,2,3,5]
@@ -32,9 +34,6 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
     }
 ```
 
----
-
-##Why dummy and slow are related?  
 
 
 ---
