@@ -1,8 +1,5 @@
 In this question we need to rearrange a string according to certain order. Firstly, we need to find out the order of rearrangement.
 
-
-This is my original solution:
-
 ```
 public static String convert(String s, int numRows) {
 
