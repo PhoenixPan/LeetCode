@@ -25,3 +25,6 @@ public class Solution {
     }
 }
 ```
+##Second Version
+
+We use several int values to represent all the positions and avoid actually manipulating the strings.
