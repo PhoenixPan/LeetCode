@@ -1,14 +1,12 @@
 ##First version
-27 ms, only beats 15%  
+25 ms, only beats 18%. It is slow as we constantly manipulate the strings.
 ```
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
         int max = 0;
         String temp = "";
         
-        if (s.length() == 1)
-            return 1;
-        if (s.equals(""))
+        if (s.equals("") || s == null)
             return 0;
             
         for (int i = 0; i < s.length(); i++) {
