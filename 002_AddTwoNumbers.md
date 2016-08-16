@@ -1,4 +1,6 @@
 
+Try to make it simple and readable.
+
 ```
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
