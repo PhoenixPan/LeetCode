@@ -86,35 +86,52 @@ public class Solution {
 ```
 
 
+##Third version
 
-
-
+In this one we try to extend the number from a middle point, so we could stop at the maximum to avoid waste.  
+This 53ms solution beats only 37%. There's still a way to improve! I can also make the loop part a method, so it would look better.  
 ```
 public class Solution {
-    private int lo, maxLen;
     public String longestPalindrome(String s) {
+        int length = s.length();
+        int start = 0;
+        int max = 1;
+        if (s == null || length < 2)
+            return s;
+        
+        
+        for (int i = 0; i < length; i++) {
+            int left = i;
+            int right = i;
+            int thisLength = 0;
+            
+            while (left >= 0 && right < length && s.charAt(left) == s.charAt(right)) {
+                left--;
+                right++;
+            }
+            thisLength = right - left - 1;
+            
+            if (thisLength > max) {
+                max = thisLength;
+                start = left + 1;
+            }
+            
+            left = i;
+            right = i + 1;
+            while (left >= 0 && right < length && s.charAt(left) == s.charAt(right)) {
+                left--;
+                right++;
+            }
+            thisLength = right - left - 1;
+            
+            if (thisLength > max) {
+                max = thisLength;
+                start = left + 1;
+            }
+            
+        }
 
-    int len = s.length();
-    if (len < 2)
-        return s;
-
-    for (int i = 0; i < len-1; i++) {
-        extendPalindrome(s, i, i);  //assume odd length, try to extend Palindrome as possible
-        extendPalindrome(s, i, i+1); //assume even length.
-    }
-    return s.substring(lo, lo + maxLen);
-}
-
-private void extendPalindrome(String s, int j, int k) {
-    while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
-        j--;
-        k++;
-    }
-    if (maxLen < k - j - 1) {
-        lo = j + 1;
-        maxLen = k - j - 1;
-    }
-
+    return s.substring(start, start + max);
     }
 }
 ```
