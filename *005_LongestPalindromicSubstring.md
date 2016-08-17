@@ -118,3 +118,7 @@ private void extendPalindrome(String s, int j, int k) {
     }
 }
 ```
+
+
+
+(http://fisherlei.blogspot.jp/search?q=Palindromic)
