@@ -59,7 +59,7 @@ public class Solution {
         }
         if (l1 != null)
             temp.next = l1;
-        if (l2 != null)
+        else if (l2 != null)
             temp.next = l2;
         
         return result.next;
