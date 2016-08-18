@@ -1,4 +1,4 @@
-#####First version
+##Version 1
 
 A primitive solution that manipulates Strings. Spent 7 ms and beats 9.5%.
 
@@ -51,7 +51,7 @@ A primitive solution that manipulates Strings. Spent 7 ms and beats 9.5%.
 	}
 ```
 
-#####Second version
+##Version 2
 
 Improved based on the first one, it now beats 14.9%.
 
@@ -106,7 +106,7 @@ Improved based on the first one, it now beats 14.9%.
 	}
 ```
 
-#####Third version
+##Version 3
 
 Manipulate numbers are more efficient than manipulating Strings. Now we have 85%.
 
