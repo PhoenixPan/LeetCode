@@ -1,4 +1,4 @@
-#####First version
+##Version 1
 
 ```
 public static int[] twoSum(int[] nums, int target) {
@@ -16,7 +16,7 @@ public static int[] twoSum(int[] nums, int target) {
 
 It is slow and beats only 14%, because two loops are too expensive. Let's improve it. 
 
-#####Second version
+##Version 2
 
 ```
 public static int[] twoSumMap(int[] numbers, int target) {
@@ -36,7 +36,7 @@ public static int[] twoSumMap(int[] numbers, int target) {
 
 We can use map to achieve this (as above) or another method, in which we order the array first, and then we find the indices of the minimum (0) and the maximum (n-1), and then add these two numbers together and compare the result with the target. If the result is larget than the target, we decrement the maximum index, otherwise we increment the minimum index.
 
-Other tricks:
+##Other tricks
 
 1. Creating a temporary array almost does not cost time: 
 ```
