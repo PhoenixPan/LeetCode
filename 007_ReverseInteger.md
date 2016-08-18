@@ -1,4 +1,4 @@
-Test cases:
+##Test cases
 -2147483412
 2147483412
 
@@ -8,7 +8,7 @@ Test cases:
 1534236469
 -1534236469
 
-
+##Version 1
 ```
 public class Solution {
     public int reverse(int x) {
@@ -32,10 +32,7 @@ public class Solution {
 }
 ```
 
-
-
-
-
+##Version 2
 ```
 public class Solution {
     public int reverse(int x) {
