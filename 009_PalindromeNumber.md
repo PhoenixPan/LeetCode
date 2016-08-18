@@ -1,4 +1,4 @@
-##First version
+##Version 1
 The given number will be within integer range, otherwise it cannot pass in. So "if (reversed > 214748364 || reversed < -214748364)" would be enough. Even if it is a fit, the is not a palindrome.
 ```
 public class Solution {
