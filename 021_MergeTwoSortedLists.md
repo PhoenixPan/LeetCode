@@ -7,7 +7,7 @@
 [-1,0,5][1,2,3]
 ```
 
-##First version
+##Version 1
 
 Well...this is a 2ms solution, but only beats 2%! We have to do more!
 ```
@@ -38,7 +38,7 @@ public class Solution {
 }
 ```
 
-##Second version
+##Version 2
 
 1ms solution. We only need to concatenate what's left to the final result. This will significantly improve the performance when one list is much longer than the other. 
 ```
