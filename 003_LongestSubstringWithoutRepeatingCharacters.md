@@ -1,4 +1,4 @@
-##First version
+##Version 1
 25 ms, only beats 18%. It is slow as we constantly manipulate the strings.
 ```
 public class Solution {
@@ -25,6 +25,6 @@ public class Solution {
     }
 }
 ```
-##Second Version
+##Version 2
 
 We use several int values to represent all the positions and avoid actually manipulating the strings.
