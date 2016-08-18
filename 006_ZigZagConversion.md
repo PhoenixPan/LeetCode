@@ -1,3 +1,5 @@
+##Version 1
+
 In this question we need to rearrange a string according to certain order. We need to find out the order of rearrangement.
 
 ```
