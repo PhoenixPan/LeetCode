@@ -1,4 +1,4 @@
-
+##Version 1
 Try to make it simple and readable.  
 Be aware of the concepts of reference and pointer, know how Java pass values.
 
