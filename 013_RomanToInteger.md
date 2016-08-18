@@ -1,3 +1,4 @@
+##Version 1
 ```
 public class Solution {
     public int romanToInt(String s) {
@@ -50,7 +51,7 @@ Doesn't make difference:
 length
 charAt / char[]
 
-
+##Version 2
 ```
 public class Solution {
     public int romanToInt(String s) {
