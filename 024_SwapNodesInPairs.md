@@ -53,3 +53,40 @@ public class Solution {
     }
 }
 ```
+##Version 2
+
+Bring forward the second number and remove it from the first listnode
+```
+public class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode operator = dummy;
+        
+        while(operator.next != null && operator.next.next != null) {
+            ListNode odd = operator.next;
+            ListNode even = operator.next.next;
+            operator.next = even;
+            odd.next = even.next; // Remove the used additional even
+            operator.next.next = odd;
+            operator = operator.next.next;
+        }
+        return dummy.next;
+    }
+}
+```
+
+##Version 3 
+```
+public class Solution {
+    public ListNode swapPairs(ListNode head) {
+       if(head == null || head.next == null) return head;
+        ListNode nextNode = head.next;
+        head.next = swapPairs(nextNode.next);
+        nextNode.next = head;
+        return nextNode;
+    }
+}
+```
+
+##
