@@ -1,23 +1,5 @@
-## Test sets:
-```
-""
-"a"
-"aa"
-"aaa"
-"aba"
-"abba"
-"kaba"
-"abak"
-"kabad"
-"kabba"
-"abbak"
-"kabbad"
-"aaaakabbad"
-"kabbadaaaa"
-"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-```
-
 ## Solution 1： time limit exceeded
+Time: O(n^2), Space: O(1) 
 ```
 public class Solution {
     public String longestPalindrome(String s) {
@@ -81,17 +63,21 @@ public class Solution {
 }
 ```
 
-## Solution 2: was accepted, now exceeds time limit
-中间开花
+## Solution 2: accepted
+中间开花   
 
-Time: O(n^2), Space: O(1) 
+Time: O(2 n^2), Space: O(1) 
+avoid unnecessary check, but still O(n^2), failed the "aaaaaaaa..." test case.    
 ```
 public static String longestPalindrome(String s) {
-    	if (s == null || s.length() == 0) return s;
-    	
+	if (s == null || s.length() < 2) return s;
     	int len = s.length();
     	String output = "";
         for(int i = 0; i < len; i++) { 
+        	// break if it's not possible to find longer output
+        	if (len - i < output.length() / 2)
+        		break;
+        	
         	// for "aba"
         	int left = i;
         	int right = i;
@@ -100,9 +86,7 @@ public static String longestPalindrome(String s) {
         		left--;
         		right++;
         	}
-        	left++; // restore the last modification
-        	right--;
-        	output = right - left >= output.length()? s.substring(left, right + 1) : output;      	
+        	output = right - left - 2 >= output.length()? s.substring(left + 1, right) : output;      	
         	
         	// for "abba"
         	left = i;
@@ -112,17 +96,18 @@ public static String longestPalindrome(String s) {
         		left--;
         		right++;
         	}
-        	left++; // restore the last modification
-        	right--;
-        	output = right - left >= output.length()? s.substring(left, right + 1) : output;
+        	output = right - left - 2>= output.length()? s.substring(left + 1, right) : output;
         }        
         return output;
-    }
+}
 ```
+We should be able to cut the time to half by check "aba" and "abba" in the same loop.  
+
+## Solution 3: 
 
 ## Test case 1
 Solution 1: ~100ms  
-Solution 2: ~10ms  
+Solution 2: ~6ms  (without "len - i < output.length() / 2" it will be 10ms and will not be accepted)
 
 ```
 System.out.println(longestPalindrome("") + "/");
@@ -131,6 +116,7 @@ System.out.println(longestPalindrome("aa") + "/aa");
 System.out.println(longestPalindrome("aaa") + "/aaa");
 System.out.println(longestPalindrome("abc") + "/a");
 System.out.println(longestPalindrome("aabaa") + "/aabaa");
+System.out.println(longestPalindrome("ababababa") + "/ababababa");
 System.out.println(longestPalindrome("kaba") + "/aba");
 System.out.println(longestPalindrome("abak") + "/aba");
 System.out.println(longestPalindrome("kabad") + "/aba");
