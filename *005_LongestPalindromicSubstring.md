@@ -101,7 +101,35 @@ public static String longestPalindrome(String s) {
         return output;
 }
 ```
-We should be able to cut the time to half by check "aba" and "abba" in the same loop.  
+We should be able to cut the time to half by check "aba" and "abba" in the same loop:
+```
+public static String longestPalindrome(String s) {
+	if (s == null || s.length() < 2) return s;
+
+	int len = s.length();
+	String output = "";
+	for(int i = 0; i < len; i++) { 
+		// break if it's not possible to find longer output
+		if (len - i < output.length() / 2)
+			break;
+
+		int left = i; // for "aba"
+		int right = i;
+		//TODO: some conditions
+		if () {
+			right = i + 1;
+		}
+
+		while (left >= 0 && right < len && s.charAt(left) == s.charAt(right)) {
+			left--;
+			right++;
+		}
+		output = right - left - 2 >= output.length()? s.substring(left + 1, right) : output;      	
+
+	}        
+	return output;
+}
+```
 
 ## Solution 3: 
 
