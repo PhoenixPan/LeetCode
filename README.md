@@ -22,4 +22,21 @@ O(n!): 排列搜索
 
 ## Algorithm
 ### Binary Search 二分法
-结束条件？start <= end
+#### 模板
+```java
+while (start + 1 < end) {
+  int mid = start + (end - start) / 2;
+  if (nums[mid] == target) {
+    // ...
+  } else if (nums[mid] < target) {
+    // ...
+  } else {
+    // ...
+  }
+}
+```
+
+注意事项：
+1. 结束条件使用 start + 1 < end 确保不会死循环，因为除2的结果偏左；
+2. mid + 1 或 mid -1 会排除当前元素，若是错误使用则可能会导致无解；
+3. 不建议将 == 代码块和 < 或 > 代码块合并为 <= 或 >= 处理，为此需要考虑解的范围，浪费时间；
