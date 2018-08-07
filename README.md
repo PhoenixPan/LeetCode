@@ -22,6 +22,9 @@ O(n!): 排列搜索
 
 ## Algorithm
 ### Binary Search 二分法
+1. Level 1：找 first position / last position；
+2. 
+
 #### 模板
 ```java
 while (start + 1 < end) {
