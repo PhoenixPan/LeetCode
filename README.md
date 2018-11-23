@@ -43,3 +43,11 @@ while (start + 1 < end) {
 1. 结束条件使用 start + 1 < end 确保不会死循环，因为除2的结果偏左；
 2. mid + 1 或 mid -1 会排除当前元素，若是错误使用则可能会导致无解；
 3. 不建议将 == 代码块和 < 或 > 代码块合并为 <= 或 >= 处理，为此需要考虑解的范围，浪费时间；
+
+
+## 094 Binary Tree Inorder Traversal (Tree traveral)
+Inorder: left, root, right  
+Preorder: root, left, right  
+Postorder: left, right, root  
+
+Calculate time complexity for recursive: https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation  
