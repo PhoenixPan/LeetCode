@@ -44,6 +44,12 @@ while (start + 1 < end) {
 2. mid + 1 或 mid -1 会排除当前元素，若是错误使用则可能会导致无解；
 3. 不建议将 == 代码块和 < 或 > 代码块合并为 <= 或 >= 处理，为此需要考虑解的范围，浪费时间；
 
+## BFS
+1. two queues
+2. one queue + one flag node
+3. one queue + int size (chosen)
+
+(102)
 
 ## 094 Binary Tree Inorder Traversal (Tree traveral)
 Inorder: left, root, right  
