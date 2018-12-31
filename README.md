@@ -66,9 +66,13 @@ Questions:
 
 Questions: 102
 
-## 094 Binary Tree Inorder Traversal (Tree traveral)
+## Tree
 Inorder: left, root, right  
 Preorder: root, left, right  
 Postorder: left, right, root  
+Morris Traversal: 
+
+114: Rotate nodes using a class variable  
+236: Pass nodes from bottom to top  
 
 Calculate time complexity for recursive: https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation  
