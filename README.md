@@ -72,7 +72,58 @@ Preorder: root, left, right
 Postorder: left, right, root  
 Morris Traversal: 
 
+Inorder predecessor 前驱结点：节点val值小于该节点val值并且值最大的节点 
+Inorder successor 后继节点：节点val值大于该节点val值并且值最小的节点
+
 114: Rotate nodes using a class variable  
 236: Pass nodes from bottom to top  
 
 Calculate time complexity for recursive: https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation  
+
+```java
+public void inorderMorris(TreeNode root) {
+    while (root != null) {
+        if (root.left == null) {
+            System.out.println(root.val);
+            root = root.right;
+        } else {
+            TreeNode pre = root.left;
+            while (pre.right != null && pre.right != root) {
+                pre = pre.right;
+            }
+            if (pre.right == null) {
+                pre.right = root;
+                root = root.left;
+            } else { // pre.right == root
+                pre.right = null;
+                System.out.println(root.val);
+                root = root.right;
+            }
+        }
+    }
+}
+```
+
+```java
+public void preorderMorris(TreeNode root) {
+    while (root != null) {
+        if (root.left == null) {
+            System.out.println(root.val);
+            root = root.right;
+        } else {
+            TreeNode pre = root.left;
+            while (pre.right != null && pre.right != root) {
+                pre = pre.right;
+            }
+            if (pre.right == null) {
+                pre.right = root;
+                System.out.println(root.val);                
+                root = root.left;
+            } else { // pre.right == root
+                pre.right = null;
+                root = root.right;
+            }
+        }
+    }
+}
+```
