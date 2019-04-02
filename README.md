@@ -131,3 +131,24 @@ public void preorderMorris(TreeNode root) {
     }
 }
 ```
+
+## 余数问题
+```
+1015. Smallest Integer Divisible by K
+1018. Binary Prefix Divisible By 5
+```
+
+数学本质:  
+```
+r = n % k
+n % k = (r + m * k) % k
+n % k = r % k
+```
+
+题中表现： 
+```
+r = n % k; 
+n = r + m * k; 
+10 * n + 1 = 10 * m * k + 10 * r + 1; 
+(10 * n + 1) % k = (10 * r + 1) % k;
+```
